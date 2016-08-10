@@ -15,6 +15,10 @@ function * executeSourceTransfer (destinationTransfer, fulfillment, ledgers) {
   const sourceTransferLedger = noteToSelf.source_transfer_ledger
   const sourceTransferID = noteToSelf.source_transfer_id
   validator.validate('Iri', sourceTransferLedger)
+  /*
+  * not all ledgers provide a UUID as there transfer identifier.
+  * bitcoin, bigchainDB and others have hashes here
+  * */
   // validator.validate('Uuid', sourceTransferID)
 
   log.debug('Requesting fulfillment of source transfer: ' + sourceTransferID + ' (fulfillment: ' + JSON.stringify(fulfillment) + ')')

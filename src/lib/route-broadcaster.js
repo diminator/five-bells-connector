@@ -95,6 +95,11 @@ class RouteBroadcaster {
    * @param {URI} connector
    */
   addConnector (connector) {
+    /*
+    * This is somewhat a hack not to have to POST connectors to the plugin
+    * connectors should not be the responsibility of the ledger
+    *
+    * */
     if (typeof connector !== 'string') return
     // Don't broadcast routes to ourselves.
     if (connector === this.baseURI) return
