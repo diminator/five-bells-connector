@@ -15,7 +15,7 @@ function * executeSourceTransfer (destinationTransfer, fulfillment, ledgers) {
   const sourceTransferLedger = noteToSelf.source_transfer_ledger
   const sourceTransferID = noteToSelf.source_transfer_id
   validator.validate('Iri', sourceTransferLedger)
-  validator.validate('Uuid', sourceTransferID)
+  // validator.validate('Uuid', sourceTransferID)
 
   log.debug('Requesting fulfillment of source transfer: ' + sourceTransferID + ' (fulfillment: ' + JSON.stringify(fulfillment) + ')')
   // TODO check the timestamp on the response from the ledger against

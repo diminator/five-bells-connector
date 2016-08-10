@@ -95,6 +95,7 @@ class RouteBroadcaster {
    * @param {URI} connector
    */
   addConnector (connector) {
+    if (typeof connector !== 'string') return
     // Don't broadcast routes to ourselves.
     if (connector === this.baseURI) return
     this.adjacentConnectors[connector] = true

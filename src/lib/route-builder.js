@@ -89,7 +89,7 @@ class RouteBuilder {
    * @param {Transfer} sourceTransfer
    * @returns {Transfer} destinationTransfer
    */
-  * getDestinationTransfer (sourceTransfer) {
+      * getDestinationTransfer (sourceTransfer) {
     log.info('constructing destination transfer ' +
       'sourceLedger=%s sourceAmount=%s ilpHeader=%s',
       sourceTransfer.ledger, sourceTransfer.amount,

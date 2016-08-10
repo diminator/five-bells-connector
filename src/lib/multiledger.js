@@ -29,7 +29,7 @@ Multiledger.prototype.buildLedgers = function () {
     const LedgerPlugin = require('ilp-plugin-' + creds.type)
     ledgers[ledgerId] = new LedgerPlugin({
       id: ledgerId,
-      auth: creds,
+      auth: 'auth' in creds ? creds.auth : creds,
       store: store,
       debugReplyNotifications: this.config.features.debugReplyNotifications,
       log: this.makeLogger('plugin-' + creds.type),
